@@ -1,0 +1,139 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+/* Resetting default margin, padding, and box-sizing for all elements */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root level CSS variables for color palette */
+:root{
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+}
+
+/* Setting up global styles for HTML and body */
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Styling the main container */
+main{
+    background: var(--cream);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styling the card container */
+.card{
+    display: inline-flex;
+    width: 500px;
+}
+
+/* Styling the product image */
+.product_image{
+    width: 50%;
+    background-image: url(./images/image-product-desktop.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px 0 0 10px;
+}
+
+/* Styling the product details container */
+.product_details{
+    width: 50%;
+    background: var(--white);
+    border-radius: 0 10px 10px 0;
+    padding: 25px;
+}
+
+/* Styling the product details text elements */
+.product_details h3{
+    font-size: smaller;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--dark-grayish-blue);
+    margin-bottom: 15px;
+}
+
+.product_details h1{
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--very-dark-blue);
+}
+
+.product_details p{
+    font-size: smaller;
+    color: var(--dark-grayish-blue);
+    margin-bottom: 15px;
+}
+
+/* Styling the product prices section */
+.product_details .prices{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.product_details .prices #new_price{
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    color: var(--dark-cyan);
+}
+
+.product_details .prices #old_price{
+    font-size: smaller;
+    color: var(--dark-grayish-blue);
+    text-decoration: line-through;
+}
+
+/* Styling the Add to Cart button */
+.product_details .btn{
+    background-color: var(--dark-cyan);
+    text-align: center;
+    padding: 10px;
+    font-weight: 700;
+    font-size: smaller;
+    color: var(--white);
+    border-radius: 5px;
+}
+
+.product_details .btn:hover{
+    background-color: hsl(158, 38%, 20%);
+    cursor: pointer;
+}
+
+/* Responsive design for screens with a maximum width of 500px */
+@media screen and (max-width:500px) {
+    .card{
+        flex-direction: column;
+        height: 90vh;
+        width: 85vw;
+    }
+
+    .product_image{
+        height: 50%;
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+        background-image: url(./images/image-product-mobile.jpg);
+    }
+
+    .product_details{
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+    }
+}
